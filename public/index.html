@@ -1,0 +1,91 @@
+<!DOCTYPE htmls>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="page" >
+    <div class="navs">
+      <a id="loginLink" href="login.html" style="display: none;">تسجيل الدخول</a>
+      <a id="logoutLink" href="#" style="display: none;">تسجيل الخروج</a>
+    </div>
+
+    <div class="head"><img src="photos/logooo.png" alt="" id="img"></div>
+
+    <div class="page-container">
+      <div class="page-contents">
+        <img id="depImg" src="photos/dep.png" alt="" />
+      </div>
+
+      <div class="page-side">
+
+        <div id="creatModel" class="creatModel" style="display: none">
+          <input type="text" placeholder="اسم النموذج" id="modelName">
+          <input type="file" placeholder="النموذج" id="model">
+          <div class="celect-menu">
+            <label for="sec">اختر القسم</label>
+            <select id="dep">
+        
+            </select>
+          </div>
+          <button id="submit">إضافة نموذج</button>
+          <script>
+            document.getElementById('submit').addEventListener('click', () => {
+              submitForm();
+            });
+
+            document.getElementById('logoutLink').addEventListener('click', () => {
+              logout();
+            });
+          </script>
+        </div>
+        
+        <div class="searchBox">
+          <h4>البحث المتقدم</h4>
+          <label for="searchInput">:أدخل كلمات مفتاحية</label>
+          <input id="searchInput" type="text" class="searchInput" placeholder="ابحث هنا...">
+          <button onclick="search()">بحث</button>
+        
+          <h4>:النتائج</h4>
+          <div id="results">
+        
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="showAll" id="showAll">
+  <div id="loader2" style="width: 100%; text-align: center;">
+    <div>الرجاء الإنتظار...</div>
+  </div>
+
+  <div id="formsData">
+   
+  </div>
+  
+  <button onclick="closeShowAll()">إغلاق</button>
+</div>
+
+    <div id="loader" style="width: 100%; text-align: center;">
+  <div>الرجاء الإنتظار...</div>
+</div>
+
+<div id="container" class="container swiper">
+  <div  class="slider-wrapper"> 
+   <div id="edu-item" class="eduList swiper-wrapper">
+   
+</div>
+<div class="swiper-slide-button swiper-button-prev"></div>
+<div class="swiper-slide-button swiper-button-next"></div>
+</div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

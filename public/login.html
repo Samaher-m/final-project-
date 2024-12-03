@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="styleOfLogin.css">
+</head>
+<body>
+    <img src="photos/logoWep.png" alt="">
+    <div class="loginBox">
+        <h2>تسجيل الدخول</h2>
+        <div id="login_msg" style=" display: none;">
+            
+        </div>
+        <form action="/login" method="post">
+            <div class="from-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your name" required>
+            </div>
+            <div class="from-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn">تسجيل الدخول</button>
+        </form>
+        <button type="submit" class="btn"> <a href="/sign.html">أنشئ حساب</button>
+        <button type="submit" class="btn"> <a href="/index.html">تصفح </button>
+
+    </div>
+</body>
+<script>
+    if(location.hash == '#error'){
+        document.getElementById('login_msg').innerHTML='!اسم المستخدم او كلمة المرور غير صحيح';
+        document.getElementById('login_msg').style='display: block;';
+    }
+    
+    if(location.hash == '#register'){
+        document.getElementById('login_msg').innerHTML='تم تسجيل مستخدم جديد';
+        document.getElementById('login_msg').style='display: block;'
+    }
+</script>
+</html>
